@@ -1,14 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-
-const FOOTER_SERVICES = [
-  "Meta & Google Ads",
-  "Websites & Landing Pages",
-  "Local SEO",
-  "Google Business Profile",
-  "Social Media Content",
-  "Lead Follow-Up Systems",
-];
+import { SITE } from "@/lib/site";
+import { SERVICES } from "@/lib/services";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -31,13 +24,13 @@ export function Footer() {
               Services
             </h3>
             <ul className="mt-5 space-y-3 text-sm">
-              {FOOTER_SERVICES.map((s) => (
-                <li key={s}>
+              {SERVICES.map((s) => (
+                <li key={s.slug}>
                   <Link
-                    href="/#services"
+                    href={`/services/${s.slug}`}
                     className="text-white/60 transition hover:text-white"
                   >
-                    {s}
+                    {s.name}
                   </Link>
                 </li>
               ))}
@@ -51,10 +44,26 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               <li>
                 <a
-                  href="mailto:hello@moshimarketing.com"
+                  href={`tel:${SITE.phone.tel}`}
+                  className="font-semibold text-white transition hover:text-brand"
+                >
+                  Call {SITE.phone.display}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`sms:${SITE.phone.sms}`}
                   className="text-white/60 transition hover:text-white"
                 >
-                  hello@moshimarketing.com
+                  Text {SITE.phone.display}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="text-white/60 transition hover:text-white"
+                >
+                  {SITE.email}
                 </a>
               </li>
               <li>

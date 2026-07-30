@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { SITE } from "@/lib/site";
+import { IconPhone } from "./icons";
 
 const NAV_LINKS = [
-  { href: "/#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/#process", label: "How It Works" },
   { href: "/#results", label: "Results" },
   { href: "/#faq", label: "FAQ" },
@@ -36,6 +38,13 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <a
+            href={`tel:${SITE.phone.tel}`}
+            className="inline-flex items-center gap-2 text-sm font-bold text-white/90 transition hover:text-white"
+          >
+            <IconPhone width={18} height={18} />
+            {SITE.phone.display}
+          </a>
           <Link
             href="/#contact"
             className="rounded-full bg-white px-6 py-2.5 text-sm font-bold text-brand shadow-sm transition hover:bg-white/90 hover:shadow-md"
@@ -95,12 +104,29 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <a
+                href={`tel:${SITE.phone.tel}`}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-brand"
+                onClick={() => setOpen(false)}
+              >
+                <IconPhone width={18} height={18} />
+                Call
+              </a>
+              <a
+                href={`sms:${SITE.phone.sms}`}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-4 py-3 text-sm font-bold text-white"
+                onClick={() => setOpen(false)}
+              >
+                Text
+              </a>
+            </div>
             <Link
               href="/#contact"
-              className="mt-3 rounded-full bg-white px-6 py-3 text-center text-base font-bold text-brand"
+              className="mt-3 rounded-full bg-white/10 px-6 py-3 text-center text-base font-bold text-white"
               onClick={() => setOpen(false)}
             >
-              Get More Leads
+              Get My Free Strategy Call
             </Link>
           </div>
         </div>

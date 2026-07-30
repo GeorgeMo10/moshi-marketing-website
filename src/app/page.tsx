@@ -1,61 +1,15 @@
 import Link from "next/link";
 import {
-  IconTarget,
-  IconGlobe,
-  IconSearch,
-  IconPin,
-  IconShare,
-  IconInbox,
-  IconBell,
   IconCheck,
   IconChart,
   IconStar,
   IconArrow,
   IconPhone,
 } from "@/components/icons";
-
-const SERVICES = [
-  {
-    icon: IconTarget,
-    title: "Meta & Google Ads",
-    body: "Targeted campaigns that put your business in front of homeowners actively searching for the work you do.",
-  },
-  {
-    icon: IconGlobe,
-    title: "Websites & Landing Pages",
-    body: "Fast, mobile-first pages built for one job: turning visitors into quote requests and booked jobs.",
-  },
-  {
-    icon: IconSearch,
-    title: "Local SEO",
-    body: "Rank for the searches that matter in your service area so you get found before your competitors.",
-  },
-  {
-    icon: IconPin,
-    title: "Google Business Profile",
-    body: "Optimized profiles and review generation that push you to the top of the Google Map pack.",
-  },
-  {
-    icon: IconShare,
-    title: "Social Media Content",
-    body: "Consistent, on-brand content that builds trust and keeps your business top of mind in the community.",
-  },
-  {
-    icon: IconInbox,
-    title: "Email Campaigns",
-    body: "Stay in front of past customers and warm leads with campaigns that turn into repeat and referral work.",
-  },
-  {
-    icon: IconBell,
-    title: "Lead Follow-Up Systems",
-    body: "Automated text and email follow-up so no lead slips through the cracks — even when you're on the job.",
-  },
-  {
-    icon: IconChart,
-    title: "Tracking & Reporting",
-    body: "Clear reporting on leads, calls, and jobs booked, so you always know exactly what your marketing brings in.",
-  },
-];
+import { SERVICES } from "@/lib/services";
+import { SITE } from "@/lib/site";
+import { PhoneCTA } from "@/components/PhoneCTA";
+import { JsonLd } from "@/components/JsonLd";
 
 const STEPS = [
   {
@@ -140,9 +94,30 @@ const FAQS = [
   },
 ];
 
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE.url,
+  telephone: SITE.phone.tel,
+  email: SITE.email,
+  image: `${SITE.url}/logo.svg`,
+  priceRange: "$$",
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "United States local service areas",
+  },
+  makesOffer: SERVICES.map((s) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name: s.name },
+  })),
+};
+
 export default function Home() {
   return (
     <>
+      <JsonLd data={LOCAL_BUSINESS_SCHEMA} />
       {/* ---------------- Hero ---------------- */}
       <section className="relative overflow-hidden bg-white">
         <div
@@ -271,25 +246,45 @@ export default function Home() {
             </h2>
             <p className="mt-4 text-lg text-muted">
               Stop stitching together freelancers and DIY tools. We handle every
-              piece that brings you booked jobs.
+              piece that brings you booked jobs — plus email campaigns and clear
+              reporting on every lead.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => (
-              <div
-                key={s.title}
-                className="group rounded-2xl border border-ink/5 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-lift"
+              <Link
+                key={s.slug}
+                href={`/services/${s.slug}`}
+                className="group flex flex-col rounded-2xl border border-ink/5 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-lift"
               >
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand transition group-hover:bg-brand group-hover:text-white">
                   <s.icon width={24} height={24} />
                 </span>
-                <h3 className="mt-5 text-lg font-bold text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {s.body}
+                <h3 className="mt-5 text-lg font-bold text-ink">{s.name}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                  {s.tagline}
                 </p>
-              </div>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand">
+                  Learn more
+                  <IconArrow
+                    width={16}
+                    height={16}
+                    className="transition group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-ink/10 px-7 py-3 text-base font-bold text-ink transition hover:border-ink/25"
+            >
+              View all services
+              <IconArrow width={18} height={18} />
+            </Link>
           </div>
         </div>
       </section>
@@ -472,6 +467,13 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-8 rounded-2xl bg-white/10 p-5">
+                <p className="text-sm font-semibold text-white/80">
+                  Prefer to reach out now? Call or text us:
+                </p>
+                <PhoneCTA tone="light" className="mt-3" />
+              </div>
             </div>
 
             <form

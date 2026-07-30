@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SITE } from "@/lib/site";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -12,7 +13,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://moshimarketing.com"),
+  metadataBase: new URL(SITE.url),
+  alternates: { canonical: "/" },
   title: {
     default: "Moshi Marketing — More Leads & Booked Jobs for Contractors",
     template: "%s | Moshi Marketing",
