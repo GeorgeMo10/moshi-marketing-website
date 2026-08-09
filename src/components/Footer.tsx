@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
 import { SERVICES } from "@/lib/services";
+import { WORKFLOWS } from "@/lib/automations";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -9,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-ink text-white/80">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <Logo variant="on-white" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
@@ -31,6 +32,56 @@ export function Footer() {
                     className="text-white/60 transition hover:text-white"
                   >
                     {s.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/automations"
+                  className="text-white/60 transition hover:text-white"
+                >
+                  Automations &amp; CRM
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/crm"
+                  className="text-white/60 transition hover:text-white"
+                >
+                  The CRM
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/how-it-works"
+                  className="text-white/60 transition hover:text-white"
+                >
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/results"
+                  className="text-white/60 transition hover:text-white"
+                >
+                  Results &amp; Clients
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+              Automations
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm">
+              {WORKFLOWS.map((w) => (
+                <li key={w.slug}>
+                  <Link
+                    href={`/automations/${w.slug}`}
+                    className="text-white/60 transition hover:text-white"
+                  >
+                    {w.name}
                   </Link>
                 </li>
               ))}

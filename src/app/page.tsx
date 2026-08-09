@@ -1,14 +1,9 @@
 import Link from "next/link";
-import {
-  IconCheck,
-  IconChart,
-  IconStar,
-  IconArrow,
-  IconPhone,
-} from "@/components/icons";
+import { IconCheck, IconChart, IconArrow, IconPhone } from "@/components/icons";
 import { SERVICES } from "@/lib/services";
 import { SITE } from "@/lib/site";
 import { PhoneCTA } from "@/components/PhoneCTA";
+import { Industries } from "@/components/Industries";
 import { JsonLd } from "@/components/JsonLd";
 
 const STEPS = [
@@ -48,27 +43,6 @@ const BENEFITS = [
   "Follow-up handled automatically so no lead is ever wasted",
   "Clear reporting — know exactly what you get for your money",
   "You focus on quoting and completing jobs. We bring the work.",
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "We went from chasing referrals to having a steady stream of quote requests every week. I finally have jobs booked weeks out.",
-    name: "Mike R.",
-    role: "Roofing Contractor",
-  },
-  {
-    quote:
-      "They rebuilt our website and got our Google profile to the top of the map. The phone rings with real jobs now, not tire-kickers.",
-    name: "Sara L.",
-    role: "HVAC Company Owner",
-  },
-  {
-    quote:
-      "The best part is I don't have to think about marketing anymore. Moshi handles it all and the leads just keep coming in.",
-    name: "Dave T.",
-    role: "Remodeling & Renovations",
-  },
 ];
 
 const FAQS = [
@@ -220,6 +194,12 @@ export default function Home() {
       </section>
 
       {/* ---------------- Problem strip ---------------- */}
+      <Industries
+        eyebrow="Industries We Serve"
+        heading="The trades we bring booked jobs to"
+        sub="Roofing, HVAC, plumbing, electrical and more — if your customers are homeowners, we've built this system for a business like yours."
+      />
+
       <section className="border-y border-ink/5 bg-brand">
         <div className="mx-auto max-w-5xl px-5 py-14 text-center sm:px-8">
           <h2 className="text-2xl font-extrabold leading-snug text-white sm:text-3xl">
@@ -277,12 +257,19 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/services"
               className="inline-flex items-center gap-2 rounded-full border-2 border-ink/10 px-7 py-3 text-base font-bold text-ink transition hover:border-ink/25"
             >
               View all services
+              <IconArrow width={18} height={18} />
+            </Link>
+            <Link
+              href="/automations"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-base font-bold text-white shadow-sm transition hover:bg-brand-dark hover:shadow-md"
+            >
+              See our automations &amp; CRM
               <IconArrow width={18} height={18} />
             </Link>
           </div>
@@ -322,6 +309,16 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-white/20 px-7 py-3 text-base font-bold text-white transition hover:border-white/45"
+            >
+              See the full process
+              <IconArrow width={18} height={18} />
+            </Link>
           </div>
         </div>
       </section>
@@ -368,42 +365,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- Testimonials ---------------- */}
-      <section className="bg-brand/5">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-sm font-bold uppercase tracking-wider text-brand">
-              Contractors Love Us
-            </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-              Real results for real service businesses
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
-              <figure
-                key={t.name}
-                className="flex flex-col rounded-2xl border border-ink/5 bg-white p-7 shadow-card"
-              >
-                <div className="flex gap-1 text-brand">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <IconStar key={i} />
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 text-base leading-relaxed text-ink">
-                  “{t.quote}”
-                </blockquote>
-                <figcaption className="mt-6 border-t border-ink/5 pt-4">
-                  <span className="block font-bold text-ink">{t.name}</span>
-                  <span className="text-sm text-muted">{t.role}</span>
-                </figcaption>
-              </figure>
-            ))}
           </div>
         </div>
       </section>

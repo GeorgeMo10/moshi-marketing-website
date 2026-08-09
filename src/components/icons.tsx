@@ -124,3 +124,94 @@ export function IconArrow(props: SVGProps<SVGSVGElement>) {
     </Base>
   );
 }
+
+export function IconBolt(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M13 2 4.5 13.2h6L11 22l8.5-11.2h-6L13 2Z" />
+    </Base>
+  );
+}
+
+export function IconClock(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5.2l3.2 2" />
+    </Base>
+  );
+}
+
+export function IconCalendar(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2.5" />
+      <path d="M3.5 10h17M8 3.5v3M16 3.5v3" />
+    </Base>
+  );
+}
+
+export function IconGift(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="9" width="17" height="4" rx="1.2" />
+      <path d="M5 13v6.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V13M12 9v12" />
+      <path d="M12 9S10.8 4 8.4 4a2.2 2.2 0 0 0 0 5M12 9s1.2-5 3.6-5a2.2 2.2 0 0 1 0 5" />
+    </Base>
+  );
+}
+
+export function IconMail(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3" y="5.5" width="18" height="13" rx="2.5" />
+      <path d="m3.8 7.5 7.1 5.1a2 2 0 0 0 2.2 0l7.1-5.1" />
+    </Base>
+  );
+}
+
+export function IconChat(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M20 12.5a7.5 7.5 0 0 1-10.8 6.7L4 20.5l1.4-4.8A7.5 7.5 0 1 1 20 12.5Z" />
+    </Base>
+  );
+}
+
+export function IconUsers(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="9.5" cy="8" r="3.5" />
+      <path d="M3 20a6.5 6.5 0 0 1 13 0" />
+      <path d="M16.5 5.2a3.5 3.5 0 0 1 0 6.6M18 14.4A6.5 6.5 0 0 1 21 20" />
+    </Base>
+  );
+}
+
+export function IconLayers(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="m12 3 8.5 4.5L12 12 3.5 7.5 12 3Z" />
+      <path d="m3.5 12.5 8.5 4.5 8.5-4.5" />
+      <path d="m3.5 17 8.5 4.5 8.5-4.5" />
+    </Base>
+  );
+}
+
+export function IconStop(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m8.2 8.2 7.6 7.6" />
+    </Base>
+  );
+}
+
+export function IconPhoneMobile(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="6.5" y="2.5" width="11" height="19" rx="2.5" />
+      <path d="M10.5 5.5h3M11 18.4h2" />
+    </Base>
+  );
+}

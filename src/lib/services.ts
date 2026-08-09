@@ -32,7 +32,7 @@ export const SERVICES: Service[] = [
     icon: IconTarget,
     image: "/services/meta-google-ads.jpg",
     imageAlt:
-      "Marketing team reviewing Meta and Google ad campaign performance for a contractor",
+      "Homeowners sitting on their couch in the evening looking at a phone together",
     tagline: "Get in front of homeowners the moment they need you.",
     intro:
       "Paid ads are the fastest way to fill your calendar. We build and manage Meta (Facebook & Instagram) and Google campaigns that target homeowners in your service area who are actively looking for the work you do — then we optimize every dollar toward booked jobs, not clicks.",
@@ -85,7 +85,7 @@ export const SERVICES: Service[] = [
     icon: IconGlobe,
     image: "/services/websites-landing-pages.jpg",
     imageAlt:
-      "Designer building a fast, mobile-first website and landing page for a service business",
+      "Homeowner at a kitchen table researching a contractor on a laptop",
     tagline: "A website built for one job: turning visitors into booked work.",
     intro:
       "Your website is your hardest-working salesperson. We build fast, mobile-first websites and campaign landing pages designed around conversion — clear messaging, trust signals, and obvious calls to action — so the traffic you earn actually turns into quote requests and phone calls.",
@@ -138,7 +138,7 @@ export const SERVICES: Service[] = [
     icon: IconSearch,
     image: "/services/local-seo.jpg",
     imageAlt:
-      "Analytics showing local search ranking growth for a contractor's website",
+      "Hand holding a phone showing a map with a location pin on a suburban street",
     tagline: "Get found first when neighbors search for your services.",
     intro:
       "When someone searches “roofer near me” or “emergency plumber,” you want to be the first name they see. Our local SEO gets your website and Google presence ranking for the searches that matter in your service area — bringing you a steady stream of free, high-intent leads that compound month after month.",
@@ -191,7 +191,7 @@ export const SERVICES: Service[] = [
     icon: IconPin,
     image: "/services/google-business-profile.jpg",
     imageAlt:
-      "Local business storefront optimized for Google Business Profile and map results",
+      "Contractor crew unloading tools from a work van outside a suburban home",
     tagline: "Own the Google map pack in your service area.",
     intro:
       "Your Google Business Profile is often the first thing homeowners see — and the map pack drives more calls than almost anything else. We optimize your profile, generate a steady flow of 5-star reviews, and keep it active so you show up at the top of the map and win the click before your competitors do.",
@@ -244,7 +244,7 @@ export const SERVICES: Service[] = [
     icon: IconShare,
     image: "/services/social-media-content.jpg",
     imageAlt:
-      "Social media content and posts created for a local service business",
+      "Contractor filming a finished renovated room on his phone",
     tagline: "Stay top of mind and build trust in your community.",
     intro:
       "People hire contractors they know and trust. We create consistent, on-brand social media content — job photos, before-and-afters, tips, and reviews — that keeps your business visible, builds credibility, and turns your followers into your next customers and referral sources.",
@@ -297,7 +297,7 @@ export const SERVICES: Service[] = [
     icon: IconBell,
     image: "/services/lead-follow-up-systems.jpg",
     imageAlt:
-      "Automated text and email lead follow-up system for a contractor on a phone",
+      "Contractor with a tool belt checking his phone at a job site",
     tagline: "Never lose another lead to slow follow-up.",
     intro:
       "Most leads go cold because nobody follows up fast enough. We set up automated text and email follow-up that responds to every new lead instantly and keeps nurturing them until they book — so you turn more of the leads you're already paying for into actual jobs, even when you're on the tools.",
