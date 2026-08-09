@@ -27,6 +27,9 @@ export const metadata: Metadata = {
 
 const PARTNER_CLIENTS = CLIENTS.filter((c) => c.partner);
 
+/** Clients beyond the ones featured below. Update as the roster grows. */
+const MORE_CLIENTS = 30;
+
 export default function ResultsPage() {
   // Checked per render rather than at module scope, so dropping a logo file
   // into public/clients/ is picked up without editing this file.
@@ -78,13 +81,23 @@ export default function ResultsPage() {
             </p>
           </div>
 
-          {/* Logo strip */}
+          {/* Logo strip — the ones we can show, plus a count for the rest */}
           <ul className="mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 border-y border-ink/5 py-10">
             {CLIENTS.map((client) => (
               <li key={client.slug} className="flex items-center">
                 <ClientLogo client={client} size="sm" />
               </li>
             ))}
+            <li className="flex items-center">
+              <span className="flex h-12 flex-col justify-center rounded-xl bg-brand/10 px-5 sm:h-14">
+                <span className="text-lg font-extrabold leading-none tracking-tight text-brand">
+                  +{MORE_CLIENTS} more
+                </span>
+                <span className="mt-1 text-[11px] font-semibold leading-none text-muted">
+                  businesses we run marketing for
+                </span>
+              </span>
+            </li>
           </ul>
         </div>
       </section>

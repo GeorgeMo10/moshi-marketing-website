@@ -8,11 +8,9 @@
  * worse than no policy at all.
  */
 export const LEGAL = {
-  /** TODO: confirm the registered legal entity name (e.g. "Moshi Marketing LLC"). */
-  entity: "Moshi Marketing",
-  /** TODO: add the registered business mailing address. */
-  address: "Macomb County, Michigan, United States",
-  /** TODO: confirm the state whose law governs your client agreements. */
+  entity: "Moshi Marketing LLC",
+  /** TODO: add the city and ZIP — a mailing address without them isn't usable. */
+  address: "27418 Thomas Avenue, Michigan, United States",
   governingLaw: "the State of Michigan",
   effectiveDate: "August 8, 2026",
   lastUpdated: "August 8, 2026",
