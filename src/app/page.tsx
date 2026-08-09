@@ -147,18 +147,20 @@ export default function Home() {
           </div>
 
           {/* Hero image — the moment a lead actually lands */}
-          <div className="animate-fade-up [animation-delay:120ms]">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/automations/new-lead-notification.jpg"
-                alt="Contractor holding a phone showing a New Lead notification for a kitchen remodel quote request"
-                className="h-full w-full object-cover"
-                width={1200}
-                height={900}
-                fetchPriority="high"
-              />
-            </div>
+          <div className="animate-fade-up relative flex justify-center [animation-delay:120ms]">
+            <div
+              aria-hidden
+              className="absolute inset-x-0 top-1/2 -z-10 h-72 -translate-y-1/2 rounded-full bg-brand/15 blur-3xl"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/automations/new-lead-phone.png"
+              alt="Phone showing a New Lead notification from Moshi Marketing for a kitchen remodel quote request"
+              className="h-auto w-auto max-h-[34rem] max-w-full object-contain drop-shadow-2xl lg:max-h-[38rem]"
+              width={786}
+              height={1806}
+              fetchPriority="high"
+            />
           </div>
         </div>
       </section>
