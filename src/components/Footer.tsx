@@ -129,9 +129,22 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} Moshi Marketing. All rights reserved.</p>
-          <p>Built to bring contractors more booked jobs.</p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              href="/privacy"
+              className="transition hover:text-white/70"
+            >
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition hover:text-white/70">
+              Terms of Service
+            </Link>
+            <span className="hidden sm:inline">
+              Built to bring contractors more booked jobs.
+            </span>
+          </div>
         </div>
       </div>
     </footer>

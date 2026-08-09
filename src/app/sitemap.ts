@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...["privacy", "terms"].map((slug) => ({
+      url: `${SITE.url}/${slug}`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
     ...WORKFLOW_SLUGS.map((slug) => ({
       url: `${SITE.url}/automations/${slug}`,
       lastModified: now,
