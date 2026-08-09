@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IconCheck, IconChart, IconArrow, IconPhone } from "@/components/icons";
+import { IconCheck, IconArrow } from "@/components/icons";
 import { SERVICES } from "@/lib/services";
 import { SITE } from "@/lib/site";
 import { PhoneCTA } from "@/components/PhoneCTA";
@@ -146,48 +146,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero card — "leads dashboard" mock */}
+          {/* Hero image — the moment a lead actually lands */}
           <div className="animate-fade-up [animation-delay:120ms]">
-            <div className="rounded-3xl border border-ink/5 bg-white p-6 shadow-lift">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-bold text-ink">
-                  New Leads This Week
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-brand/10 px-3 py-1 text-xs font-bold text-brand">
-                  <IconChart width={14} height={14} /> +38%
-                </span>
-              </div>
-              <div className="mt-5 flex items-end gap-2">
-                {[40, 55, 48, 70, 62, 88, 100].map((h, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 rounded-t-md bg-gradient-to-t from-brand/30 to-brand"
-                    style={{ height: `${h}px` }}
-                  />
-                ))}
-              </div>
-              <div className="mt-6 space-y-3">
-                {[
-                  { name: "Kitchen remodel — quote request", tag: "Ads" },
-                  { name: "Roof repair — call booked", tag: "Google" },
-                  { name: "AC install — form submitted", tag: "SEO" },
-                ].map((lead) => (
-                  <div
-                    key={lead.name}
-                    className="flex items-center gap-3 rounded-xl border border-ink/5 bg-white px-4 py-3"
-                  >
-                    <span className="grid h-9 w-9 place-items-center rounded-full bg-brand/10 text-brand">
-                      <IconPhone width={16} height={16} />
-                    </span>
-                    <span className="flex-1 text-sm font-medium text-ink">
-                      {lead.name}
-                    </span>
-                    <span className="rounded-full bg-ink/5 px-2.5 py-1 text-xs font-semibold text-muted">
-                      {lead.tag}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/automations/new-lead-notification.jpg"
+                alt="Contractor holding a phone showing a New Lead notification for a kitchen remodel quote request"
+                className="h-full w-full object-cover"
+                width={1200}
+                height={900}
+                fetchPriority="high"
+              />
             </div>
           </div>
         </div>
